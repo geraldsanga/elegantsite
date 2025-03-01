@@ -1,0 +1,29 @@
+<app-hero [title]="'Our Products'" 
+          [subtitle]="'Quality Healthcare Solutions'"
+          [imageUrl]="'assets/hero-products.jpg'">
+</app-hero>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <!-- Categories Sidebar -->
+    <div class="bg-white p-6 rounded-lg shadow-sm">
+      <h3 class="text-lg font-semibold mb-4">Categories</h3>
+      <ul class="space-y-2">
+        <li *ngFor="let category of categories" class="text-gray-600 hover:text-blue-600 cursor-pointer">
+          {{ category }}
+        </li>
+      </ul>
+    </div>
+    
+    <!-- Products Grid -->
+    <div class="md:col-span-3">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <app-product-card 
+          *ngFor="let product of products" 
+          [product]="product"
+          class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+        </app-product-card>
+      </div>
+    </div>
+  </div>
+</div>
