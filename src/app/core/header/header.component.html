@@ -4,7 +4,7 @@
       <!-- Logo -->
       <a routerLink="/" class="flex items-center space-x-2">
         <!-- <img src="assets/logo.png" alt="Pharmacy Logo" class="h-12 w-auto"> -->
-        <span class="text-xl font-bold text-blue-600 hidden md:block">HealthPlus</span>
+        <span class="text-xl font-bold text-blue-600 hidden md:block">➕ HealthPlus</span>
       </a>
 
       <!-- Desktop Navigation -->
@@ -41,6 +41,26 @@
            routerLinkActive="text-blue-600 after:w-full">
           Contact
         </a>
+                <!-- Dropdown Parent -->
+        <div class="relative group">
+          <button class="text-gray-600 hover:text-blue-600 transition-colors font-medium relative
+                        after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all
+                        group-hover:after:w-full">
+            Services
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 shadow-lg rounded-lg opacity-0 invisible 
+                      group-hover:opacity-100 group-hover:visible transition-opacity duration-300">
+            <a routerLink="/services/web-development" 
+              class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Web Development</a>
+            <a routerLink="/services/mobile-apps" 
+              class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Mobile Apps</a>
+            <a routerLink="/services/consulting" 
+              class="block px-4 py-2 text-gray-700 hover:bg-blue-50">Consulting</a>
+          </div>
+        </div>
+
       </div>
 
       <!-- Mobile Menu Button -->
@@ -76,6 +96,26 @@
            routerLinkActive="text-blue-600 bg-blue-50">
           Contact
         </a>
+        <!-- Services Dropdown -->
+    <button (click)="isMobileDropdownOpen = !isMobileDropdownOpen" 
+        class="block w-full text-left px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg flex justify-between">
+    Services
+      <svg class="w-5 h-5 transform transition-transform" 
+        [class.rotate-180]="isMobileDropdownOpen" xmlns="http://www.w3.org/2000/svg" fill="none" 
+        viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+            d="M19 9l-7 7-7-7"/>
+      </svg>
+    </button>
+
+    <div *ngIf="isMobileDropdownOpen" class="pl-6 space-y-1">
+    <a routerLink="/services/web-development" 
+    class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-lg">Web Development</a>
+    <a routerLink="/services/mobile-apps" 
+    class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-lg">Mobile Apps</a>
+    <a routerLink="/services/consulting" 
+    class="block px-3 py-2 text-gray-700 hover:bg-blue-50 rounded-lg">Consulting</a>
+    </div>
       </div>
     </div>
   </nav>

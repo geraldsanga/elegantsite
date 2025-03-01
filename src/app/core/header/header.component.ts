@@ -1,6 +1,6 @@
 import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router'
 @Component({
   selector: 'app-header',
   imports: [NgIf, RouterLink],
@@ -9,4 +9,5 @@ import { RouterLink } from '@angular/router';
 })
 export class HeaderComponent {
   isMenuOpen: boolean = false;
+  isMobileDropdownOpen: boolean = false;
 }
