@@ -1,0 +1,31 @@
+<app-header></app-header>
+<app-hero [title]="'Contact Us'" 
+          [subtitle]="'Here to help'"
+          [imageUrl]="'assets/hero-3.jpeg'"
+          class="animate__animated animate__fadeInDown"
+>
+</app-hero>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div>
+      <h2 class="text-2xl font-bold mb-6">Send Us a Message</h2>
+      <app-contact-form></app-contact-form>
+    </div>
+    
+    <div class="space-y-8">
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Our Location</h3>
+        <div class="bg-gray-100 aspect-video rounded-lg overflow-hidden">
+          <!-- Google Map embed -->
+        </div>
+      </div>
+      
+      <div class="bg-blue-50 p-6 rounded-lg">
+        <h3 class="text-lg font-semibold mb-3">Emergency Contact</h3>
+        <p class="text-blue-600 font-medium">24/7 Hotline: (555) 987-6543</p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
