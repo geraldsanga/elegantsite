@@ -1,0 +1,86 @@
+<app-header></app-header>
+
+<app-hero [title]="'About Our Pharmacy'" 
+          [subtitle]="'Serving the Community Since 1995'"
+          [imageUrl]="'assets/hero-2.jpeg'"
+          class="animate__animated animate__fadeInDown"
+>
+</app-hero>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <!-- Mission Statement -->
+  <section class="mb-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate__animated animate__fadeInRight">
+      <div>
+        <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          At City Pharmacy, we're committed to providing exceptional pharmaceutical care through 
+          personalized service, expert advice, and community-focused health solutions. Our mission 
+          is to be your trusted partner in health and wellness.
+        </p>
+        <p class="text-gray-600 leading-relaxed">
+          With over 25 years of service, we combine traditional values with modern healthcare 
+          practices to ensure the best outcomes for our patients.
+        </p>
+      </div>
+      <div class="rounded-lg overflow-hidden shadow-lg">
+        <img src="assets/pharma-inside.jpeg" alt="Pharmacy Interior" class="w-full h-96 object-cover">
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="mb-16">
+    <h2 class="text-3xl font-bold text-center mb-8">Our Team</h2>
+    
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            @for (teamMember of teamMembers; track teamMember.name){
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <img [src]="teamMember.imageUrl" alt="Dr. Sarah Johnson" class="w-32 h-32 rounded-full mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">{{teamMember.name}}</h3>
+                    <p class="text-gray-600 mb-2">{{teamMember.role}}</p>
+                    <p class="text-sm text-gray-500">{{teamMember.honours}}</p>
+                </div>
+            }
+        </div>
+    
+    
+  </section>
+
+  <!-- Certifications -->
+  <section class="bg-gray-50 py-12 rounded-lg">
+    <div class="max-w-5xl mx-auto text-center">
+      <h3 class="text-2xl font-semibold mb-8">Accreditations & Affiliations</h3>
+      <div class="flex flex-wrap justify-center gap-12">
+        <img src="assets/usp-logo.png" alt="USP Verified" class="h-12 w-auto opacity-75">
+        <img src="assets/aha-logo.png" alt="AHA" class="h-12 w-auto opacity-75">
+        <img src="assets/nabp-logo.png" alt="NABP" class="h-12 w-auto opacity-75">
+      </div>
+    </div>
+  </section>
+
+  <!-- History Timeline -->
+  <section class="mt-16">
+    <h2 class="text-3xl font-bold text-center mb-12">Our History</h2>
+    <div class="relative">
+      <div class="border-l-2 border-blue-200 ml-4 pl-8 space-y-12">
+        <div class="relative">
+          <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[30px] top-4"></div>
+          <h3 class="text-xl font-semibold">1995 - Founded</h3>
+          <p class="text-gray-600 mt-2">Established as a small neighborhood pharmacy</p>
+        </div>
+        <div class="relative">
+          <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[30px] top-4"></div>
+          <h3 class="text-xl font-semibold">2008 - Expanded Services</h3>
+          <p class="text-gray-600 mt-2">Added compounding services and home delivery</p>
+        </div>
+        <div class="relative">
+          <div class="absolute w-4 h-4 bg-blue-600 rounded-full -left-[30px] top-4"></div>
+          <h3 class="text-xl font-semibold">2020 - Digital Transformation</h3>
+          <p class="text-gray-600 mt-2">Launched online prescription management system</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>
