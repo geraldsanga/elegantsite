@@ -1,0 +1,82 @@
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 shadow-sm transition-all">
+  <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <a routerLink="/" class="flex items-center space-x-2">
+        <!-- <img src="assets/logo.png" alt="Pharmacy Logo" class="h-12 w-auto"> -->
+        <span class="text-xl font-bold text-blue-600 hidden md:block">HealthPlus</span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a routerLink="/" 
+           class="text-gray-600 hover:text-blue-600 transition-colors font-medium relative
+                  after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all
+                  hover:after:w-full"
+            style="cursor: pointer;"
+           routerLinkActive="text-blue-600 after:w-full">
+          Home
+        </a>
+        <a routerLink="/about" 
+           class="text-gray-600 hover:text-blue-600 transition-colors font-medium relative
+                  after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all
+                  hover:after:w-full"
+            style="cursor: pointer;"
+           routerLinkActive="text-blue-600 after:w-full">
+          About
+        </a>
+        <!-- <a routerLink="/products" 
+           class="text-gray-600 hover:text-blue-600 transition-colors font-medium relative
+                  after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all
+                  hover:after:w-full"
+            style="cursor: pointer;"
+           routerLinkActive="text-blue-600 after:w-full">
+          Products
+        </a> -->
+        <a routerLink="/contact" 
+           class="text-gray-600 hover:text-blue-600 transition-colors font-medium relative
+                  after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-0.5 after:bg-blue-600 after:transition-all
+                  hover:after:w-full"
+            style="cursor: pointer;"
+           routerLinkActive="text-blue-600 after:w-full">
+          Contact
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100"
+              (click)="isMenuOpen = !isMenuOpen">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden animate__animated animate__slideInDown" *ngIf="isMenuOpen">
+      <div class="pt-2 pb-3 space-y-1">
+        <a routerLink="/" 
+           class="block px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg"
+           routerLinkActive="text-blue-600 bg-blue-50">
+          Home
+        </a>
+        <a routerLink="/about" 
+           class="block px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg"
+           routerLinkActive="text-blue-600 bg-blue-50">
+          About
+        </a>
+        <a routerLink="/products" 
+           class="block px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg"
+           routerLinkActive="text-blue-600 bg-blue-50">
+          Products
+        </a>
+        <a routerLink="/contact" 
+           class="block px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg"
+           routerLinkActive="text-blue-600 bg-blue-50">
+          Contact
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
