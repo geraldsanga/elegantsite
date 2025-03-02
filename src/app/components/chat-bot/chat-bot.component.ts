@@ -2,7 +2,7 @@ import { AsyncPipe, DatePipe, NgClass, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {BehaviorSubject} from "rxjs";
 import {ChangeDetectorRef, Component, ElementRef, inject, ViewChild} from '@angular/core';
-import { ChatBotService } from 'src/app/services/chat-bot.service';
+import { ChatBotService } from "../../services/chat-bot.service"
 @Component({
   selector: 'app-chat-bot',
   imports: [NgIf, NgFor, FormsModule, AsyncPipe, NgClass, DatePipe],
@@ -46,7 +46,7 @@ export class ChatBotComponent {
     this.loading$.next(true);
     this.newMessage = '';
 
-    this.chatBotService.sendMessage({ message: this.newMessage }).subscribe({
+    this.chatBotService.sendMessage({ message: userMessage.content }).subscribe({
       next: (response: string) => {
         const botMessage: any = {
           content: this.formatMessage(response),
@@ -58,6 +58,8 @@ export class ChatBotComponent {
         this.loading$.next(false);
       },
       error: (error) => {
+        console.log("The error message is: ")
+        console.log(error)
         const errorMessage: any = {
           content: this.formatMessage("There appears to be a problem with your connection. Please try again later."),
           isUser: false,
