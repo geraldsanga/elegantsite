@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {environment} from "../../environments/environment";
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +10,12 @@ export class ChatBotService {
 
   constructor(private http: HttpClient) { }
 
-  public sendMessage(botMessageRequest: any): Observable<any> {
-    return this.http.post(environment.apiEndPoint + '/ai/query-database/', botMessageRequest);
+  sendMessage(message: { message: string }): Observable<string> {
+    return this.http.post(environment.apiEndPoint + '/ai/query-guest-bot/', message, {
+      responseType: 'text',
+      observe: 'response'
+    }).pipe(
+      map(response => response.body || '')
+    );
   }
 }
